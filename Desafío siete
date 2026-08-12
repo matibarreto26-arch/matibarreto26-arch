@@ -1,0 +1,23 @@
+# Primero ingrese la función de print para mostrar el texto en pantalla
+
+print ("Solución para el desafío 7 de programación")
+
+# Le doy ingreso a la variable celsius, y le agregó dos funciones:
+# input, ya que le va a permitir al usuario ingresar texto desde su teclado, entre "" le agrego un texto que deseo mostrar en pantalla de acuerdo a la actividad planteada, y le dejó un espacio para que le permita escribir.
+# Pero a esa función, le agregó previamente la función: float para convertir ese dato en un número decimal y así poder realizar cálculos.
+ 
+celsius = float (input ("Ingrese la temperatura que hace en su ciudad, en grados celsius: "))
+
+# Agrego dos variables más, en este caso tienen el nombre de las unidades de medición, aunque es importante destacar que podrían haberse llamado de otra forma y cumplir la misma función.
+# En Fahrenheit, agrego entre paréntesis la variable celsius que sería el dato que va a colocar el usuario, y según la fórmula de Fahrenheit, a la temperatura en grados Celsius primero se la multiplica por 9/5 y luego se le suma 32.
+# En Kelvin, realiza algo similar a lo anterior, pero adecuado a la fórmula de Kelvin, a los grados Cº se le sumaría 273.15
+
+conversion_a_fahrenheit = (celsius * 9/5) + 32
+conversion_a_kelvin = (celsius + 273.15)
+
+# Hasta el momento, las líneas escritas anteriormente de conversión, se estarían ejecutando, pero no mostrando en pantalla el resultado.
+# Por ello, se agregan dos líneas, de print para mostrar en pantalla un breve texto (agregado entre " "), y seguido mediante el uso de (,) agregar las variables ingresadas anteriormente.
+
+print  ("Al convertir la temperatura de su ciudad a Fahrenheit es: ", conversion_a_fahrenheit)
+print  ("Al convertir la temperatura de su ciudad a Kelvin es: ", conversion_a_kelvin)
+

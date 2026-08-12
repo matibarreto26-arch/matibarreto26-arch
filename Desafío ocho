@@ -1,0 +1,22 @@
+# Primero ingreso la función print para mostrar el texto en pantalla
+
+print("Solución para el desafío 8 de programación")
+
+# Agrego la variable numero y uso input para que el usuario ingrese un dato.
+# Uso int para convertir ese dato en número entero.
+
+numero = int(input("¡Hola! Ingresa un número entero: "))
+
+# Creo una lista con los divisores dados en la actividad.
+
+divisores = [2, 3, 5, 7, 9, 10, 11]
+
+# Recorro cada divisor de la lista.
+# Si el resto de dividir el número entre ese divisor es 0,
+# entonces el número es múltiplo de ese divisor.
+
+for divisor in divisores:
+    if numero % divisor == 0:
+        print("El número", numero, "es múltiplo de", divisor)
+    else:
+        print("El número", numero, "no es múltiplo de", divisor)

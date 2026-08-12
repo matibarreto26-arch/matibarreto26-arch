@@ -1,0 +1,21 @@
+print ("Calcular promedio para última reunión")
+calificacion_uno = int(input("Indique la nota de la actividad: "))
+calificacion_dos = int(input("Indique la nota del oral: "))
+calificacion_tres = int(input("Indique la nota del parcial: "))
+calificacion_cuatro = int(input("Indique la nota del escrito: "))
+calificacion_cinco = int(input("Indique la nota de la presentación: "))
+resultado = calificacion_uno + calificacion_dos + calificacion_tres + calificacion_cuatro + calificacion_cinco
+
+
+if calificacion_uno < 1 or calificacion_uno > 10:
+    print ("ERROR - La nota de la actividad debe estar entre 1 y 10")
+elif calificacion_dos < 1 or calificacion_dos > 10:
+    print ("ERROR - La nota del oral debe estar entre 1 y 10")
+elif calificacion_tres < 1 or calificacion_tres > 10:
+    print ("ERROR - La nota del parcial debe estar entre 1 y 10")
+elif calificacion_cuatro < 1 or calificacion_cuatro > 10:
+    print ("ERROR - La nota del escrito debe estar entre 1 y 10")
+elif calificacion_cinco < 1 or calificacion_cuatro > 10:
+    print ("ERROR - La nota de la presentación debe estar entre 1 y 10")
+else:
+    print ("El promedio de las notas es: ", resultado / 5)

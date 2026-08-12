@@ -1,0 +1,78 @@
+# Función que verifica si un número es primo
+def es_primo(numero):
+
+    # Un número primo debe ser mayor que 1
+    # Por eso, si el número es menor o igual a 1, no es primo
+    if numero <= 1:
+        return False
+
+    # Recorremos los posibles divisores del número
+    # Empezamos desde 2 porque todo número es divisible entre 1
+    for divisor in range(2, numero):
+
+        # Si el número se divide exacto entre otro número,
+        # entonces no es primo
+        if numero % divisor == 0:
+            return False
+
+    # Si no encontramos ningún divisor,
+    # entonces el número es primo
+    return True
+
+
+# Función que cuenta cuántos números primos hay en una lista
+def contar_primos(lista_numeros):
+
+    # Creamos un contador para guardar la cantidad de primos
+    cantidad_primos = 0
+
+    # Recorremos cada número de la lista
+    for numero in lista_numeros:
+
+        # Usamos la función es_primo() para verificar cada número
+        if es_primo(numero):
+
+            # Si el número es primo, aumentamos el contador
+            cantidad_primos += 1
+
+    # Devolvemos la cantidad total de números primos encontrados
+    return cantidad_primos
+
+
+# Función principal del programa
+def main():
+
+    # Mostramos un título para el programa
+    print("=== Verificación y cálculo de números primos ===")
+
+    # Creamos una lista de números para analizar
+    numeros = [2, 3, 4, 5, 8, 11, 15, 17, 20, 23]
+
+    # Mostramos la lista original
+    print("Lista de números:")
+    print(numeros)
+
+    # Mostramos el resultado individual de cada número
+    print("\nVerificación de cada número:")
+
+    # Recorremos cada número de la lista
+    for numero in numeros:
+
+        # Verificamos si el número es primo usando la función es_primo()
+        if es_primo(numero):
+            print(f"{numero} es primo.")
+        else:
+            print(f"{numero} no es primo.")
+
+    # Usamos la función contar_primos() para contar los primos de la lista
+    total_primos = contar_primos(numeros)
+
+    # Mostramos el resultado final
+    print("\nResultado final:")
+    print(f"En la lista hay {total_primos} números primos.")
+
+
+# Esta condición permite ejecutar el programa desde VS Code
+# Llama a la función main() solamente si este archivo se ejecuta directamente
+if __name__ == "__main__":
+    main()

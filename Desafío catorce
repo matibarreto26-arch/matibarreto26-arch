@@ -1,0 +1,16 @@
+# Doy la bienvenida al usuario (Usando la función print correctamente)
+print ("¡Hola!, Bienvenid@ al contador de palabras")
+# Solicito al usuario que ingrese un texto:
+texto = input ("Ingresa el texto: ")
+# Se tienen que eliminar espacios al inicio y al final del texto
+texto = texto.strip ()
+# En caso de que el usuario no ingresó ningún texto. 
+if texto == "":
+    cantidad_palabras = 0
+else:
+        # Separamos el texto en palabras usando los espacios como referencia
+        palabras = texto.split()
+# Contamos cuántas palabras hay en la lista
+cantidad_palabras = len (palabras)
+# Se muestra el resultado
+print ("El texto ingresado contiene", cantidad_palabras, "palabras.")

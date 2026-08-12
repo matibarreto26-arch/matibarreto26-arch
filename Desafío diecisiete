@@ -1,0 +1,92 @@
+# Importar desde la biblioteca random, ya que necesitamos generar velocidades aleatorias
+import random
+
+
+# Crear la variable y listado con los nombres de los autos que van a participar en la carrera
+autos = ["Auto 1", "Auto 2", "Auto 3", "Auto 4"]
+
+
+# Crear un diccionario para guardar la velocidad de cada auto
+# La clave será el nombre del auto y el valor será su velocidad
+velocidades = {}
+
+
+# Crear otro diccionario para guardar la distancia recorrida por cada auto
+# Al inicio todos los autos comienzan en 0 metros
+distancias = {}
+
+
+# Recorrer la lista de autos para asignarle a cada uno una velocidad aleatoria
+for auto in autos:
+    # Generar una velocidad aleatoria entre 10 y 30 metros por segundo
+    velocidades[auto] = random.randint(10, 30)
+
+    # Iniciar la distancia recorrida de cada auto en 0
+    distancias[auto] = 0
+
+
+# Mostrar al usuario las velocidades iniciales de cada auto
+print("Velocidades de los autos:")
+for auto in autos:
+    # Imprimimos el nombre del auto y su velocidad
+    print(auto, ":", velocidades[auto], "m/s")
+
+
+# Dejamos una línea en blanco para que la salida se vea más ordenada
+print()
+
+
+# La carrera dura 10 segundos, por eso uso el rango de(1, 11)
+# El 1 representa el primer segundo y el 10 el último
+for segundo in range(1, 11):
+    # Mostrar en qué segundo de la carrera estamos
+    print("Segundo", segundo)
+
+    # Recorremos cada auto para actualizar su distancia
+    for auto in autos:
+        # Cada auto avanza una distancia igual a su velocidad
+        distancias[auto] = distancias[auto] + velocidades[auto]
+
+        # Mostramos cuánto lleva recorrido cada auto
+        print(auto, "ha recorrido", distancias[auto], "metros")
+
+    # Dejamos una línea en blanco para separar cada segundo
+    print()
+
+
+# Buscamos cuál fue la mayor distancia recorrida
+distancia_maxima = max(distancias.values())
+
+
+# Creamos una lista para guardar al ganador o a los autos empatados
+ganadores = []
+
+
+# Recorremos todos los autos para ver quién o quiénes llegaron más lejos
+for auto in autos:
+    # Si la distancia del auto es igual a la distancia máxima, entonces ganó o empató
+    if distancias[auto] == distancia_maxima:
+        # Agregamos ese auto a la lista de ganadores
+        ganadores.append(auto)
+
+
+# Mostramos al usuario el resultado final de la carrera
+print("Resultado final:")
+
+
+# Si la lista de ganadores tiene un solo auto, significa que hubo un único ganador
+if len(ganadores) == 1:
+    print("El ganador es:", ganadores[0])
+
+# Si hay más de un auto en la lista, significa que hubo empate
+else:
+    print("Hubo un empate entre los siguientes autos:")
+
+    # Recorremos la lista de ganadores para imprimir todos los autos empatados
+    for auto in ganadores:
+        print(auto)
+
+
+# Mostramos al usuario la distancia máxima alcanzada
+print("Distancia recorrida:", distancia_maxima, "metros")
+

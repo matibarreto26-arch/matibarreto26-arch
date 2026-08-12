@@ -1,0 +1,72 @@
+# Importo NumPy para poder crear y trabajar con matrices
+import numpy as np
+
+# Importo random para poder colocar los barcos en posiciones aleatorias
+import random
+
+
+# Creo el tablero de Batalla Naval
+# El tablero será una matriz de 5x5 llena de ceros
+# El 0 representa agua
+tablero = np.zeros((5, 5), dtype=int)
+
+
+# Creo una variable para contar cuántos barcos ya coloqué
+barcos_colocados = 0
+
+
+# Uso un while para colocar 3 barcos en el tablero
+while barcos_colocados < 3:
+
+    # Genero una fila aleatoria entre 0 y 4
+    fila = random.randint(0, 4)
+
+    # Genero una columna aleatoria entre 0 y 4
+    columna = random.randint(0, 4)
+
+    # Verifico que en esa posición no haya ya un barco
+    if tablero[fila][columna] == 0:
+
+        # Coloco un barco en esa posición
+        # El 1 representa un barco
+        tablero[fila][columna] = 1
+
+        # Aumento el contador de barcos colocados
+        barcos_colocados += 1
+
+
+# Muestro el tablero para comprobar dónde quedaron los barcos
+# En un juego real esta línea se podría ocultar
+print("Tablero de juego:")
+print(tablero)
+
+
+# Creo una función para realizar un disparo
+# La función recibe dos coordenadas: x e y
+def disparar(x, y):
+
+    # Primero verifico que las coordenadas estén dentro del tablero
+    if x < 0 or x > 4 or y < 0 or y > 4:
+        print("Coordenadas fuera del tablero.")
+        return
+
+    # Verifico si en la posición elegida hay un barco
+    if tablero[x][y] == 1:
+        print("¡Golpeaste un barco!")
+
+    # Si no hay un barco, entonces el disparo cayó al agua
+    else:
+        print("El disparo cayó al agua.")
+
+
+# Programa principal
+# Pido al usuario que ingrese las coordenadas del disparo
+print("\nRealizá un disparo en el tablero.")
+print("Recordá que las coordenadas van del 0 al 4.")
+
+x = int(input("Ingresá la fila x: "))
+y = int(input("Ingresá la columna y: "))
+
+
+# Llamo a la función disparar con las coordenadas ingresadas
+disparar(x, y)

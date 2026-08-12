@@ -1,0 +1,17 @@
+print ("Clasificación de números")
+numero_uno = float(input("Escriba el primer número seleccionado: "))
+numero_dos = float(input("Escriba el segundo número seleccionado: "))
+numero_tres = float(input("Escriba el tercer número seleccionado: "))
+
+if numero_uno < numero_dos < numero_tres:
+    print("Orden ascendente: ", numero_uno, numero_dos, numero_tres)
+elif numero_uno < numero_tres < numero_dos:
+    print ("Orden ascendente: ", numero_uno, numero_tres, numero_dos)
+elif numero_dos < numero_uno < numero_tres:
+    print ("Orden ascendente: ", numero_dos, numero_uno, numero_tres)
+elif numero_dos < numero_tres < numero_uno:
+    print ("Orden ascendente: ", numero_dos, numero_tres, numero_uno)
+elif numero_tres < numero_uno < numero_dos:
+    print ("Orden ascendente: ", numero_tres, numero_uno, numero_dos)
+elif numero_tres < numero_dos < numero_uno:
+    print ("Orden ascendente: ", numero_tres, numero_dos, numero_uno)
